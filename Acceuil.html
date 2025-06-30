@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoyalStay - Hôtel de Luxe</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        
+        .section-gold {
+      background-color: #caa546;
+      text-align: center;
+      padding: 60px 20px;
+      color: white;
+    }
+
+    .section-gold h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    .section-gold p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-gold .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: white;
+      color: #caa546;
+    }
+
+    .btn-primary:hover {
+      background-color: #f3f3f3;
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+      background-color: transparent;
+    }
+
+    .btn-outline:hover {
+      background-color: white;
+      color: #caa546;
+    }
+
+    .services {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services h3 {
+      font-size: 1.5em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .services .highlight {
+      color: #caa546;
+      font-weight: bold;
+    }
+
+    .services p {
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .services-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .services-images img {
+      width: 560px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-secondary {
+      background-color: #caa546;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: #af8f35;
+    }
+
+    @media (max-width: 768px) {
+      .services-images img {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Variables CSS */
+        :root {
+            --gold: #D4AF37;
+            --anthracite: #2C3E50;
+            --royal-navy: #1a202c;
+            --royal-gold: #D4AF37;
+        }
+
+        /* Header Styles */
+        .header {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+
+        .logo-icon span {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--anthracite);
+        }
+
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-item {
+            background: none;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--anthracite);
+            cursor: pointer;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: var(--gold);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 64px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        .hero .gold-text {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            background: var(--gold);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-button:hover {
+            background: #b8941f;
+            transform: scale(1.05);
+        }
+
+        /* Carousel Section */
+        .carousel-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            color: var(--anthracite);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .carousel {
+            position: relative;
+            height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .carousel-content h3 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .carousel-content p {
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: var(--gold);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            color: var(--anthracite);
+            margin-bottom: 24px;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .location-badge {
+            position: absolute;
+            bottom: -24px;
+            right: -24px;
+            background: var(--gold);
+            color: white;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .location-badge .location-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .location-badge .location-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background: var(--anthracite);
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .feature {
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            transition: background 0.3s;
+        }
+
+        .feature:hover .feature-icon {
+            background: #b8941f;
+        }
+
+        .feature h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            color: #ccc;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--royal-navy);
+            color: white;
+            padding: 64px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand {
+            max-width: 400px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .footer-logo-icon {
+            position: relative;
+            margin-right: 12px;
+        }
+
+        .footer-logo-main {
+            width: 48px;
+            height: 48px;
+            background: var(--royal-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo-pulse {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .footer-brand-text h3 {
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .footer-brand-text .subtitle {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+
+        .footer-description {
+            color: #ccc;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--royal-gold);
+            transform: scale(1.1);
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--royal-gold);
+            margin-bottom: 24px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateX(4px);
+        }
+
+        .contact-icon {
+            color: var(--royal-gold);
+            margin-top: 2px;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+        }
+
+        .contact-text {
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover .contact-text {
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-link:hover {
+            color: var(--royal-gold);
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-copyright {
+            color: #9CA3AF;
+            font-size: 14px;
+            justify-content: center;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .footer-legal a {
+            color: #9CA3AF;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-legal a:hover {
+            color: var(--royal-gold);
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Icons SVG */
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .icon-large {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal {
+                margin-top: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <span style="color: white;"><i class="fas fa-crown"></i></span>
+                </div>
+                <div>
+                    <span class="logo-text">RoyalStay</span>
+                    <div class="subtitle">LUXURY HOTEL</div>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <a href="#" class="nav-item active">Accueil</a>
+                <a href="#" class="nav-item">Nos Chambres</a>
+                <a href="#" class="nav-item">Services</a>
+                <a href="#" class="nav-item">A Propos</a>
+                <a href="#" class="nav-item">Réservation</a>
+            </nav>
+            
+            <div class="mobile-menu">
+                <svg class="icon-large" viewBox="0 0 24 24">
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue au <span class="gold-text">RoyalStay</span></h1>
+            <p>L'art de l'hospitalité dans un cadre d'exception</p>
+            <button class="cta-button">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/>
+                    <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/>
+                    <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Réserver maintenant
+            </button>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Découvrez nos <span class="gold-text">Espaces</span></h2>
+                <p>Chaque espace de RoyalStay a été conçu pour vous offrir une expérience unique</p>
+            </div>
+            
+            <div class="carousel">
+                <div class="carousel-slide active">
+                    <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Chambres de Luxe">
+                    <div class="carousel-overlay">
+                        <div class="carousel-content">
+                            <h3>Chambres de Luxe</h3>
+                            <p>Confort et élégance dans chaque détail</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.pexels.com/photos/6444/penguins-emperor-antartica-life.jpg?auto=compress&cs=tinysrgb&w=1200" alt="Spa & Bien-être">
+                    <div class="carousel-overlay">
+                        <div class="carousel-content">
+                            <h3>Spa & Bien-être</h3>
+                            <p>Détente absolue dans un cadre exceptionnel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Piscine Panoramique">
+                    <div class="carousel-overlay">
+                        <div class="carousel-content">
+                            <h3>Piscine Panoramique</h3>
+                            <p>Vue imprenable sur la ville</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-dots">
+                    <div class="carousel-dot active" onclick="setSlide(0)"></div>
+                    <div class="carousel-dot" onclick="setSlide(1)"></div>
+                    <div class="carousel-dot" onclick="setSlide(2)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Une expérience <span class="gold-text">inoubliable</span></h2>
+                    <p>Situé au cœur de la ville, RoyalStay redéfinit l'art de l'hospitalité avec son architecture contemporaine et son service personnalisé. Chaque détail a été pensé pour créer un havre de paix où luxe et confort se rencontrent.</p>
+                    <p>Nos 120 chambres et suites offrent une vue panoramique exceptionnelle, tandis que nos équipements de classe mondiale garantissent un séjour mémorable.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <div class="stat-number">120</div>
+                            <div class="stat-label">Chambres & Suites</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4.9</div>
+                            <div class="stat-label">
+                                <svg class="icon" viewBox="0 0 24 24" style="fill: var(--gold);">
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                                </svg>
+                                Note moyenne
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/2029667/pexels-photo-2029667.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hall d'entrée RoyalStay">
+                    <div class="location-badge">
+                        <div class="location-header">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            <span>Centre-ville</span>
+                        </div>
+                        <div class="location-text">Emplacement privilégié</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Section Réservation -->
+  <section class="section-gold">
+    <h2><span  style="font-family: 'Playfair Display', serif;" >  votre Séjour d'Exception </span></h2>
+    <p>Laissez-nous créer des souvenirs inoubliables pour votre prochain voyage. L’excellence vous attend au RoyalStay.</p>
+    <a href="#" class="btn btn-primary">Réserver Maintenant</a>
+    <a href="#" class="btn btn-outline">Explorer nos services</a>
+  </section>
+
+  <!-- Section Services Premium -->
+  <section class="services">
+    <h3><span style="font-family: 'Playfair Display', serif;" >Services <span class="highlight">Premium</span></span></h3>
+    <p>Des équipements haut de gamme pour répondre à tous vos besoins</p>
+    <div class="services-images">
+      <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="Piscine extérieure"/>
+      <img src="https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Chambre de luxe"/>
+    </div>
+    <a href="#" class="btn-secondary">Découvrir Nos Chambres</a>
+  </section>
+
+ <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Logo & Description -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <div class="footer-logo-main">
+                               <div >
+                    <span style="color: white; "><i class="fas fa-crown"></i></span>
+                </div>
+                            </div>
+                            <div class="footer-logo-pulse"></div>
+                        </div>
+                        <div class="footer-brand-text">
+                            <h3>RoyalStay</h3>
+                            <div class="subtitle">LUXURY HOTEL</div>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Découvrez l'excellence de l'hospitalité française dans notre hôtel de luxe. 
+                        Une expérience inoubliable vous attend dans un cadre d'exception alliant 
+                        tradition et modernité.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <rect width="4" height="12" x="2" y="9" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg class="contact-icon icon" viewBox="0 0 24 24">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            <span class="contact-text">+33 1 42 86 87 88</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon icon" viewBox="0 0 24 24">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            <span class="contact-text">contact@royalstay.fr</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon icon" viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            <div class="contact-text">
+                                <div>25 Place Vendôme</div>
+                                <div>75001 Paris, France</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Nos Chambres</a>
+                        <a href="#" class="footer-link">Services</a>
+                        <a href="#" class="footer-link">À Propos</a>
+                        <a href="#" class="footer-link">Réservation</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p  class="footer-copyright">© 2024 RoyalStay. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
