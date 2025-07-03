@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoyalStay - À propos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      color: #1a1a1a;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0;
+    }
+
+    .logo .subtitle {
+      font-size: 0.9rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: #c9a349;
+    }
+
+    .btn-gold {
+      background-color: #c9a349;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn-gold:hover {
+      background-color: #b8923e;
+    }
+
+    
+        .histoire {
+  background-color: #fff;
+  padding: 3.5rem 1rem 2rem;
+  text-align: center;
+}
+
+.histoire-icones {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.6rem;
+}
+
+.histoire-icones img {
+  width: 24px;
+  height: 24px;
+}
+
+.histoire h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  color: #1a1a1a;
+}
+
+.histoire h2 .gold {
+  color: #c9a349;
+}
+
+.histoire .intro {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0.2rem 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+    
+        .tradition {
+  background-color: #fff;
+  padding: 4rem 1rem;
+}
+
+.tradition-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tradition .texte h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.tradition .texte h2 .gold {
+  color: #c9a349;
+}
+
+.tradition .texte p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  text-align: justify;
+  margin-top: 1rem;
+}
+
+.tradition .image img {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 3/4; /* Donne une image verticale */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  margin: 0 auto;
+  display: block;
+}
+
+.timeline-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+
+}
+
+.timeline-section .subtitle {
+  color: #666;
+  margin-bottom: 3rem;
+  text-align: center;
+  margin: 0 auto;
+  width: fit-content;
+}
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #c9a349;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ITEM DE BASE */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-item .content {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.timeline-item h3 {
+  color: #c9a349;
+  margin-bottom: 0.2rem;
+  font-size: 1.4rem;
+}
+
+.timeline-item strong {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* LEFT & RIGHT POSITIONNEMENT */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* Cercle de repère */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #c9a349;
+  border-radius: 50%;
+  top: 25px;
+  z-index: 1;
+}
+
+.timeline-item.left::before {
+  right: -8px;
+}
+
+.timeline-item.right::before {
+  left: -8px;
+}
+
+        .valeurs {
+  background-color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.valeurs h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.valeurs .subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-valeurs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 0 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.valeur-card {
+  padding: 1rem;
+}
+
+.valeur-card img {
+  width: 36px;
+  margin-bottom: 0.5rem;
+}
+
+.valeur-card h3 {
+  color: #c9a349;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.valeur-card p {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+        .equipe {
+  background-color: #fdf7ee; /* fond doré très clair */
+  padding: 4rem 0;
+  text-align: center;
+}
+.timeline-section{
+  background-color: #fdf7ee; 
+}
+.histoire{
+  background-color: #fdf7ee; 
+}
+
+.equipe h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.equipe .subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.grid-equipe {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes fixes */
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.profil {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06); /* ombrage léger */
+  transition: transform 0.3s ease;
+}
+
+.profil img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.profil h3 {
+  font-size: 1rem;
+  margin: 0.3rem 0 0.1rem;
+  color: #1a1a1a;
+}
+
+.profil p {
+  font-size: 0.85rem;
+  color: #c9a349;
+  margin: 0;
+}
+
+        .rejoignez {
+  background-color: #c9a349;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.rejoignez h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.rejoignez .subtitle {
+  color: #e1e0e0;
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.btn-light {
+  background-color: #fff;
+  color: #c9a349;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #f2f2f2;
+}
+
+   .stats-dark {
+  background-color: #242323;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.grid-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat img {
+  width: 36px;
+  margin-bottom: 0.4rem;
+}
+
+.stat h3 {
+  font-size: 1.5rem;
+  color: #c9a349;
+  margin-bottom: 0.2rem;
+}
+
+.stat p {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin: 0;
+}
+
+
+.footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 4rem 1rem 2rem;
+  text-align: center;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.footer-col {
+  flex: 1 1 280px;
+  min-width: 250px;
+}
+
+.footer-logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.footer-logo span {
+  color: #c9a349;
+  font-weight: normal;
+}
+
+.footer-desc {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.social-icons img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+  opacity: 1;
+}
+
+.footer a {
+  color: #c9a349;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-line {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 2rem auto 1rem;
+  max-width: 1000px;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 0.5rem;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header/Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <h1>RoyalStay</h1>
+        <p class="subtitle">Luxury Hotel</p>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="chambres.html">Nos Chambres</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="apropos.html" class="active">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="reserver.html" class="btn-gold">Réserver</a>
+    </div>
+  </header>
+    <section class="histoire">
+  <div class="container">
+    <div class="histoire-icones">
+      <img src="images/Vector.svg" alt="Couronne">
+      <img src="images/Vector (1).svg" alt="Étoile">
+    </div>
+    <h2>L’Histoire du <span class="gold">RoyalStay</span></h2>
+    <p class="intro">Depuis plus de 50 ans, nous incarnons l’excellence de l’hospitalité française.</p>
+    <p class="intro">Découvrez l’histoire d’une passion transmise de génération en génération.</p>
+  </div>
+</section>
+    <section class="tradition">
+  <div class="container tradition-grid">
+    <div class="texte">
+      <h2>Une Tradition d’<span class="gold">Excellence</span></h2>
+      <p>
+        Fondé en 1970 par la famille Dubois, le RoyalStay est né d’une vision : créer un havre dans l’axe au cœur de Paris où l’art de vivre à la française s’épanouit dans toute sa splendeur.
+        Entre luxe discret, raffinement intemporel et sens du service, notre hôtel perpétue une tradition d’hospitalité unique, transmise de génération en génération.
+      </p>
+    </div>
+    <div class="image">
+      <img src="images/pexels-photo-2029667.png" alt="Chambre RoyalStay">
+    </div>
+  </div>
+</section>
+
+  <section class="timeline-section">
+  <div class="container">
+    <div class="center">
+      <h2>Nos Grandes Étapes</h2>
+    <p class="subtitle">Plus de 50 ans d’histoire marqués par l’innovation et l’excellence</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>1970</h3>
+          <strong>Fondation</strong>
+          <p>Ouverture du premier RoyalStay Place Vendôme</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content">
+          <h3>1985</h3>
+          <strong>Distinction Palace</strong>
+          <p>Obtention du prestigieux label Palace</p>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>2000</h3>
+          <strong>Rénovation Complète</strong>
+          <p>Transformation moderne tout en préservant l’âme historique</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="content">
+          <h3>2024</h3>
+          <strong>Excellence Continue</strong>
+          <p>Leader de l’hôtellerie de luxe française</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="valeurs">
+  <div class="container">
+    <h2>Nos Valeurs</h2>
+    <p class="subtitle">Les principes qui guident chacune de nos actions et définissent notre identité</p>
+
+    <div class="grid-valeurs">
+      <div class="valeur-card">
+        <img src="images/Vector (2).svg" alt="Icône Excellence">
+        <h3>Excellence</h3>
+        <p>Nous visons la perfection dans chaque détail de votre expérience</p>
+      </div>
+
+      <div class="valeur-card">
+        <img src="images/Vector.png" alt="Icône Hospitalité">
+        <h3>Hospitalité</h3>
+        <p>L’art de recevoir à la française avec chaleur et raffinement</p>
+      </div>
+
+      <div class="valeur-card">
+        <img src="images/Frame.svg" alt="Icône Innovation">
+        <h3>Innovation</h3>
+        <p>Allier tradition et modernité pour créer des expériences uniques</p>
+      </div>
+
+      <div class="valeur-card">
+        <img src="images/Vector (3).svg" alt="Icône Discrétion">
+        <h3>Discrétion</h3>
+        <p>Respect absolu de votre intimité et de votre tranquillité</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="equipe">
+  <div class="container">
+    <h2>Notre Équipe d’Exception</h2>
+    <p class="subtitle">Des professionnels passionnés au service de votre bien-être</p>
+
+    <div class="grid-equipe">
+      <div class="profil">
+        <img src="images/mami.jpg" alt="Mamé F. Faye">
+        <h3>Mamé F. Faye</h3>
+        <p>PO</p>
+      </div>
+      <div class="profil">
+        <img src="images/kane.jpg" alt="Mouhamed Kane">
+        <h3>Mouhamed Kane</h3>
+        <p>SM</p>
+      </div>
+      <div class="profil">
+        <img src="images/sadikh.jpg" alt="Aboubacryne">
+        <h3>Aboubacryne</h3>
+        <p>ED</p>
+      </div>
+      <div class="profil">
+        <img src="images/diop.jpg" alt="Lamine Diop">
+        <h3>Lamine Diop</h3>
+        <p>ED</p>
+      </div>
+      <div class="profil">
+        <img src="images/fatima.jpg" alt="Fatima Diallo">
+        <h3>Fatima Diallo</h3>
+        <p>ED</p>
+      </div>
+      <div class="profil">
+        <img src="images/adji.jpg" alt="Adji Cisse">
+        <h3>Adji Cisse</h3>
+        <p>ED</p>
+      </div>
+      <div class="profil">
+        <img src="images/jean.jpg" alt="Jean Bianquinch">
+        <h3>Jean Bianquinch</h3>
+        <p>ED</p>
+      </div>
+      <div class="profil">
+        <img src="images/cheikh.jpg" alt="Cheikh Thiam">
+        <h3>Cheikh Thiam</h3>
+        <p>ED</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="stats-dark">
+  <div class="container">
+    <div class="grid-stats">
+      <div class="stat">
+        <img src="images/Vector (2).svg" alt="Années">
+        <h3>50+</h3>
+        <p>Années d’expérience</p>
+      </div>
+      <div class="stat">
+        <img src="images/Vector.png" alt="Collaborateurs">
+        <h3>150+</h3>
+        <p>Collaborateurs experts</p>
+      </div>
+      <div class="stat">
+        <img src="images/Vector (3).svg" alt="Satisfaction">
+        <h3>98%</h3>
+        <p>Satisfaction client</p>
+      </div>
+      <div class="stat">
+        <img src="images/Frame.svg" alt="Récompenses">
+        <h3>25+</h3>
+        <p>Récompenses internationales</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="rejoignez">
+  <div class="container">
+    <h2>Rejoignez Notre Histoire</h2>
+    <p class="subtitle">Devenez part de notre légende en vivant une expérience inoubliable au RoyalStay. Votre histoire commence ici.</p>
+    <a href="reserver.html" class="btn-light">Réserver votre séjour</a>
+  </div>
+</section>
+
+    <footer class="footer">
+  <div class="container footer-grid">
+    <!-- Colonne 1 : Logo + description + réseaux -->
+    <div class="footer-col">
+      <div class="footer-logo">RoyalStay <span>Luxury Hotel</span></div>
+      <p class="footer-desc">
+        Découvrez l’excellence de l’hospitalité française dans notre hôtel de luxe. Une expérience inoubliable vous attend dans un cadre d’exception alliant tradition et modernité.
+      </p>
+      <div class="social-icons">
+        <a href="#"><img src="images/f.svg" alt="Facebook"></a>
+        <a href="#"><img src="images/t.svg" alt="Instagram"></a>
+        <a href="#"><img src="images/i.svg" alt="Twitter"></a>
+        <a href="#"><img src="images/l.svg" alt="LinkedIn"></a>
+      </div>
+    </div>
+
+    <!-- Colonne 2 : Contact -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📞 +221 76 983 87 48</p>
+      <p>📧 <a href="mailto:contact@royalstay.sn">contact@royalstay.sn</a></p>
+      <p>📍 1 Avenue Nelson Mandela, Dakar</p>
+    </div>
+
+    <!-- Colonne 3 : Navigation -->
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <p><a href="chambres.html">Nos Chambres</a></p>
+      <p><a href="services.html">Services</a></p>
+      <p><a href="avis.html">Avis Clients</a></p>
+      <p><a href="reserver.html">Réserver</a></p>
+    </div>
+  </div>
+
+  <hr class="footer-line">
+
+  <p class="copyright">
+    © 2024 RoyalStay. Tous droits réservés.
+  </p>
+</footer>
+
+</body>
+</html>
