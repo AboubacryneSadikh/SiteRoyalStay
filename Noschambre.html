@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nos Chambres</title>
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --anthracite: #2E2E2E;
+      --text-gray-600: #555;
+      --text-gray-300: #ccc;
+      --bg-light: #f9f9f9;
+      --bg-card: #fff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: var(--bg-light);
+      color: var(--anthracite);
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4 {
+      margin-bottom: 0.5em;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    button, .btn {
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    /* Header */
+    .header {
+      background: var(--anthracite);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    .header h1 {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .header h1 .gold {
+      color: var(--gold);
+    }
+    .header p {
+      color: var(--text-gray-300);
+      font-size: 1.125rem;
+      max-width: 800px;
+      margin: 0.5rem auto 0;
+    }
+
+    /* Rooms */
+    .rooms {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .room-card {
+      display: flex;
+      flex-wrap: wrap;
+      background: var(--bg-card);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 3rem;
+      transition: box-shadow 0.5s ease, transform 0.5s ease;
+    }
+    .room-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transform: scale(1.02);
+    }
+    .room-card:nth-child(odd) .room-content {
+      order: -1;
+    }
+    .room-image {
+      flex: 1 1 400px;
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+    }
+    .room-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .room-image:hover img {
+      transform: scale(1.1);
+    }
+    .price-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--gold);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: bold;
+    }
+    .room-content {
+      flex: 1 1 400px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .room-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .room-content p {
+      color: var(--text-gray-600);
+      margin-bottom: 1.5rem;
+    }
+    .amenities, .features {
+      margin-bottom: 1.5rem;
+    }
+    .amenities h4, .features h4 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .amenities-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 0.75rem;
+    }
+    .amenity-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .amenity-icon {
+      width: 2rem;
+      height: 2rem;
+      background: var(--gold);
+      background-opacity: 0.2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--gold);
+    }
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .feature-item {
+      background: #eee;
+      color: var(--anthracite);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+    }
+    .room-button {
+      align-self: flex-start;
+      padding: 0.75rem 2rem;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 9999px;
+      margin-top: auto;
+    }
+    .room-button:hover {
+      background: #e0ac2c;
+      transform: scale(1.05);
+    }
+
+    /* CTA */
+    .cta {
+      background: var(--anthracite);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .cta h2 .gold {
+      color: var(--gold);
+    }
+    .cta p {
+      color: var(--text-gray-300);
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+    }
+    .cta-button {
+      padding: 1rem 2.5rem;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 9999px;
+      font-size: 1.125rem;
+    }
+    .cta-button:hover {
+      background: #e0ac2c;
+      transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .room-card {
+        flex-direction: column;
+      }
+      .room-image {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <section class="header">
+    <h1>Nos <span class="gold">Chambres</span></h1>
+    <p>
+      Découvrez nos trois catégories de chambres, chacune conçue pour vous offrir 
+      une expérience unique alliant luxe, confort et raffinement.
+    </p>
+  </section>
+
+  <!-- Rooms List -->
+  <section class="rooms">
+    <!-- Chambre 1 -->
+    <div class="room-card">
+      <div class="room-image">
+        <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chambre Standard">
+        <div class="price-tag">À partir de 180€/nuit</div>
+      </div>
+      <div class="room-content">
+        <h3>Chambre Standard</h3>
+        <p>Élégance et confort dans un espace raffiné de 35m²</p>
+        <div class="amenities">
+          <h4>Équipements</h4>
+          <div class="amenities-list">
+            <div class="amenity-item"><div class="amenity-icon">📶</div><span>WiFi gratuit</span></div>
+            <div class="amenity-item"><div class="amenity-icon">📺</div><span>TV 55"</span></div>
+            <div class="amenity-item"><div class="amenity-icon">☕</div><span>Machine à café</span></div>
+            <div class="amenity-item"><div class="amenity-icon">🚗</div><span>Parking inclus</span></div>
+          </div>
+        </div>
+        <div class="features">
+          <h4>Points forts</h4>
+          <div class="feature-list">
+            <span class="feature-item">Vue ville</span>
+            <span class="feature-item">Salle de bain marbre</span>
+            <span class="feature-item">Minibar</span>
+            <span class="feature-item">Coffre-fort</span>
+          </div>
+        </div>
+        <button class="room-button">Réserver cette chambre</button>
+      </div>
+    </div>
+
+    <!-- Chambre 2 -->
+    <div class="room-card">
+      <div class="room-image">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chambre Luxe">
+        <div class="price-tag">À partir de 280€/nuit</div>
+      </div>
+      <div class="room-content">
+        <h3>Chambre Luxe</h3>
+        <p>Espace premium de 50m² avec vue panoramique exceptionnelle</p>
+        <div class="amenities">
+          <h4>Équipements</h4>
+          <div class="amenities-list">
+            <div class="amenity-item"><div class="amenity-icon">📶</div><span>WiFi premium</span></div>
+            <div class="amenity-item"><div class="amenity-icon">📺</div><span>TV 65"</span></div>
+            <div class="amenity-item"><div class="amenity-icon">☕</div><span>Machine Nespresso</span></div>
+            <div class="amenity-item"><div class="amenity-icon">👥</div><span>Salon privé</span></div>
+          </div>
+        </div>
+        <div class="features">
+          <h4>Points forts</h4>
+          <div class="feature-list">
+            <span class="feature-item">Vue mer/montagne</span>
+            <span class="feature-item">Baignoire jacuzzi</span>
+            <span class="feature-item">Balcon privé</span>
+            <span class="feature-item">Service en chambre 24h</span>
+          </div>
+        </div>
+        <button class="room-button">Réserver cette chambre</button>
+      </div>
+    </div>
+
+    <!-- Chambre 3 -->
+    <div class="room-card">
+      <div class="room-image">
+        <img src="https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Suite Royale">
+        <div class="price-tag">À partir de 450€/nuit</div>
+      </div>
+      <div class="room-content">
+        <h3>Suite Royale</h3>
+        <p>L'art de vivre à la française dans 80m² d'exception</p>
+        <div class="amenities">
+          <h4>Équipements</h4>
+          <div class="amenities-list">
+            <div class="amenity-item"><div class="amenity-icon">🛏️</div><span>Lit King Size</span></div>
+            <div class="amenity-item"><div class="amenity-icon">👥</div><span>Salon séparé</span></div>
+            <div class="amenity-item"><div class="amenity-icon">☕</div><span>Bar privé</span></div>
+            <div class="amenity-item"><div class="amenity-icon">🚗</div><span>Chauffeur privé</span></div>
+          </div>
+        </div>
+        <div class="features">
+          <h4>Points forts</h4>
+          <div class="feature-list">
+            <span class="feature-item">Terrasse panoramique</span>
+            <span class="feature-item">Dressing</span>
+            <span class="feature-item">Spa privatif</span>
+            <span class="feature-item">Conciergerie dédiée</span>
+          </div>
+        </div>
+        <button class="room-button">Réserver cette chambre</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Prêt pour une expérience <span class="gold">exceptionnelle</span> ?</h2>
+    <p>
+      Réservez dès maintenant et profitez de nos tarifs préférentiels.
+      Notre équipe se fera un plaisir de vous accueillir.
+    </p>
+    <button class="cta-button">Voir nos disponibilités</button>
+  </section>
+
+</body>
+</html>
